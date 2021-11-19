@@ -10,12 +10,12 @@ module.exports = (app) => {
         const newTweet = {
             _id: (new Date()).getTime() + '',
             "topic": "Web Development",
-            "userName": "ReactJS",
+            "userName": "Beyonce",
             "verified": false,
-            "handle": "ReactJS",
+            "handle": "BEYONCE",
             "time": "2h",
-            "avatar-image": "../../../images/react-blue.png",
-            "logo-image": "../../../images/react-blue.png",
+            "avatar-image": "../../../images/bey.jpeg",
+            "logo-image": "../../../images/bey.jpeg",
             "stats": {
                 "comments": 123,
                 "retweets": 234,
