@@ -12,7 +12,7 @@ module.exports = (app) => {
             "topic": "Web Development",
             "userName": "Beyonce",
             "verified": false,
-            "handle": "BEYONCE",
+            "handle": "beyonce",
             "time": "2h",
             "avatar-image": "../../../images/bey.jpeg",
             "logo-image": "../../../images/bey.jpeg",
