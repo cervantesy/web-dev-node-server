@@ -6,6 +6,7 @@ module.exports = (app) => {
             .then(profile => res.json(profile));
 
     const updateProfile = (req, res) =>{
+        console.log(req.body);
         dao.updateProfile(req.params.id , req.body)
             .then(profile => res.json(profile));
     }

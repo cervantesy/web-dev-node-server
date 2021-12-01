@@ -31,8 +31,10 @@ module.exports = (app) => {
             .then(tweet => res.json(tweet));
     }
 
-    const likeTweet = (req, res) => {
-        dao.updateTweet(req.params.id, req.body).then(status => res.send(status));
+    const updateTweet = (req, res) => {
+
+        const tweet = {...req.body}
+        dao.updateTweet(req.params.id, tweet);
 
     }
 
@@ -42,7 +44,7 @@ module.exports = (app) => {
     }
     app.get("/rest/tweets/:id", findTweetById);
     app.delete('/rest/tweets/:id', deleteTweet);
-    app.put('/rest/tweets/:id/like', likeTweet);
+    app.put('/rest/tweets/:id', updateTweet);
     app.post('/rest/tweets', postNewTweet);
     app.get('/rest/tweets', findAllTweets);
 };
