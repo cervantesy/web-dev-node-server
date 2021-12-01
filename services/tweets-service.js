@@ -1,4 +1,4 @@
-const dao = require('../tweets/tweet-dao');
+const dao = require('../db/tweets/tweet-dao');
 
 module.exports = (app) => {
 
@@ -32,24 +32,8 @@ module.exports = (app) => {
     }
 
     const likeTweet = (req, res) => {
-        const id = req.params['id'];
-        tweets = tweets.map(tweet => {
-            if (tweet._id === id) {
-                if (tweet.liked === true) {
-                    tweet.liked = false;
-                    tweet.stats.likes--;
-                } else {
-                    tweet.liked = true;
-                    tweet.stats.likes++;
-                }
-                return tweet;
-            } else {
-                return tweet;
-            }
-        });
-        // res.sendStatus(200);
-        dao.updateTweet(req.params.id, req.body)
-            .then((status) => res.send(status));
+        dao.updateTweet(req.params.id, req.body).then(status => res.send(status));
+
     }
 
     const deleteTweet = (req, res) => {

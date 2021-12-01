@@ -10,7 +10,8 @@ const deleteTweet = (id) =>
     tweetModel.deleteOne({_id: id});
 
 const updateTweet = (id, tweet) => {
-    tweetModel.updateOne({_id: id},{$set: {liked: true}});
+    console.log("we updating tweet");
+    // tweetModel.updateOne({_id: id},{$set: {liked: true}});
 };
 
 const findTweetById = (id) =>
